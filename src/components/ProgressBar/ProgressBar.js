@@ -27,6 +27,10 @@ const ProgressBar = ({ value, size }) => {
   return (
     <ProgressWrapper
       aria-valuenow={value}
+      aria-valuemax={100}
+      aria-valuemin={0}
+      aria-valuetext={value + "%"}
+      aria-label="progress"
       role="progressbar"
       style={SIZE_STYLES[size]}
     >
@@ -46,6 +50,7 @@ const ProgressWrapper = styled.div`
   height: var(--progress-height);
   box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
   padding: var(--progress-padding);
+  background-color: ${COLORS.transparentGray15};
 `;
 
 const ProgressValueWrapper = styled.div`
